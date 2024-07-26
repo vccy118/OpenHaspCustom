@@ -1,0 +1,38 @@
+{"comment":" ----------- Top and Bottom Menu layout ------------"}
+
+{"page":0,"id":1,"obj":"btn","action":{"down": "page prev"},"x":0,"y":290,"w":79,"h":32,"bg_color":"#2C3E50","text":"\uE141","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":24}
+{"page":0,"id":2,"obj":"btn","action":{"down": "page back"},"x":80,"y":290,"w":80,"h":32,"bg_color":"#2C3E50","text":"\uE2DC","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":24}
+{"page":0,"id":3,"obj":"btn","action":{"down": "page next"},"x":161,"y":290,"w":79,"h":32,"bg_color":"#2C3E50","text":"\uE142","text_color":"#FFFFFF","radius":0,"border_side":0,"text_font":24}
+{"page":0,"id":4,"obj":"label","x":175,"y":5,"h":30,"w":45,"text":"00.0","align":2,"bg_color":"#2C3E50"}
+{"page":0,"id":5,"obj":"label","x":220,"y":5,"h":30,"w":45,"text":"°C","align":0,"bg_color":"#2C3E50"}
+{"page":0,"id":6,"obj":"label","x":3,"y":5,"h":30,"w":62,"text":"00:00:00","template":"%I:%M:%S","align":0,"bg_color":"#2C3E50"}
+{"page":0,"id":7,"obj":"label","x":63,"y":5,"h":30,"w":62,"text":"00","template":"%p","align":0,"bg_color":"#2C3E50"}
+
+{"comment":" ----------- Page rotate values ------------"}
+
+{"page":1,"id":0,"prev":3}
+{"page":3,"id":0,"next":1}
+
+{"comment":" ----------- Page 1 layout ------------"}
+
+{"page":1,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"Gate","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
+{"page":1,"id":2,"obj":"img","x":0,"y":40,"w":240,"h":180,"click":0}
+{"page":1,"id":3,"obj":"btn","x":5,"y":230,"w":70,"h":50,"toggle":false,"text":"Left\nGate","text_font":20,"align":1,"text_color":"#181818","bg_color02":"#FFF600","bg_main_stop02":"255"}
+{"page":1,"id":4,"obj":"btn","x":85,"y":230,"w":70,"h":50,"toggle":false,"text":"Both\nGate","text_font":20,"align":1,"text_color":"#181818","bg_color02":"#FFF600","bg_main_stop02":"255"}
+{"page":1,"id":5,"obj":"btn","x":165,"y":230,"w":70,"h":50,"toggle":false,"text":"Right\nGate","text_font":20,"align":1,"text_color":"#181818","bg_color02":"#FFF600","bg_main_stop02":"255"}
+
+{"comment":" ----------- Page 2 layout ------------"}
+
+{"page":2,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"Switches","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
+{"page":2,"id":2,"obj":"btn","x":30,"y":45,"w":180,"h":30,"toggle":true,"text":"Pillar Lights","text_font":20,"align":1,"text_color":"#181818"}
+{"page":2,"id":3,"obj":"btn","x":30,"y":85,"w":180,"h":30,"toggle":true,"text":"Lantern","text_font":20,"align":1,"text_color":"#181818"}
+{"page":2,"id":4,"obj":"btn","x":30,"y":125,"w":180,"h":30,"toggle":true,"text":"Garage Lights","text_font":20,"align":1,"text_color":"#181818"}
+{"page":2,"id":5,"obj":"btn","x":30,"y":165,"w":180,"h":30,"toggle":true,"text":"Front Porch Lights","text_font":20,"align":1,"text_color":"#181818"}
+{"page":2,"id":6,"obj":"btn","x":30,"y":205,"w":180,"h":30,"toggle":true,"text":"Backyard Lights","text_font":20,"align":1,"text_color":"#181818"}
+{"page":2,"id":7,"obj":"btn","x":30,"y":245,"w":180,"h":30,"toggle":true,"text":"Dry Kitchen Plug","text_font":20,"align":1,"text_color":"#181818"}
+
+{"comment":" ----------- Page 3 layout ------------"}
+
+{"page":3,"id":1,"obj":"btn","x":0,"y":0,"w":240,"h":30,"text":"Alarm","value_font":22,"bg_color":"#2C3E50","text_color":"#FFFFFF","radius":0,"border_side":0,"click":0}
+{"page":3,"id":2,"obj":"btnmatrix","x":0,"y":40,"w":240,"h":240,"options":["1","2","3","\n","4","5","6","\n","7","8","9","\n"," ","0","  Arm\nDisarm"],"toggle":false,"one_check":false,"bg_color40":"#00FF00","bg_opa40":"100","bg_main_stop40":"255"}
+{"page":3,"id":3,"obj":"label","x":22,"y":237,"h":30,"w":40,"text":"","text_color":"white","align":1,"bg_color":"#2C3E50"}
