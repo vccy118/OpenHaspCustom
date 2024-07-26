@@ -1,0 +1,30 @@
+alias: hasp alarm disarm
+description: ""
+trigger:
+  - platform: mqtt
+    topic: hasp/kitchen_touch/state/p3b2
+    payload: "{\"event\":\"up\",\"val\":11,\"text\":\"  Arm\\nDisarm\"}"
+condition:
+  - condition: state
+    entity_id: alarm_control_panel.home_alarm
+    state: armed_away
+    enabled: true
+action:
+  - sequence:
+      - variables:
+          code1: "{{states('sensor.number')}}"
+      - service: mqtt.publish
+        metadata: {}
+        data:
+          qos: "1"
+          retain: false
+          topic: hasp/kitchen_touch/state/p3b2
+          payload: "{\"event\":\"up\",\"val\":12,\"text\":\"adc\"}"
+        enabled: true
+      - service: alarm_control_panel.alarm_disarm
+        metadata: {}
+        data:
+          code: "{{code1}}"
+        target:
+          entity_id: alarm_control_panel.home_alarm
+mode: single
