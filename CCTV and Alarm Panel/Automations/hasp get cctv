@@ -1,0 +1,73 @@
+# automation to get cctv image from go2rtc latest.jpg
+# openhasp.push_image only supports "jpg" and "png" extension images, alternatives like "jpeg" doesn't work
+alias: hasp get cctv
+description: >-
+  openHasp push image to mqtt, but doesn't support https for now, use another
+  automation to convert https to http
+trigger:
+  - platform: state
+    entity_id:
+      - number.openhasp_touch_page_number
+    to: "1"
+  - platform: state
+    entity_id:
+      - light.openhasp_touch_backlight
+    to: "on"
+condition:
+  - condition: or
+    conditions:
+      - condition: state
+        entity_id: light.openhasp_touch_backlight
+        state: "on"
+      - condition: state
+        entity_id: number.openhasp_touch_page_number
+        state: "1"
+action:
+  - repeat:
+      sequence:
+        - service: openhasp.push_image
+          metadata: {}
+          data:
+            image: http://GO2RTC-IP/api/camera1/latest.jpg
+            obj: p1b2
+            width: 240
+            height: 240
+          target:
+            entity_id: openhasp.openhasp_touch
+        - delay:
+            hours: 0
+            minutes: 0
+            seconds: 1
+            milliseconds: 0
+      until:
+        - condition: or
+          conditions:
+            - condition: state
+              entity_id: light.openhasp_touch_backlight
+              state: "off"
+              for:
+                hours: 0
+                minutes: 0
+                seconds: 1
+            - condition: state
+              entity_id: number.openhaspkitchen_touch_page_number
+              state: "2"
+              for:
+                hours: 0
+                minutes: 0
+                seconds: 1
+            - condition: state
+              entity_id: number.openhasp_touch_page_number
+              state: "3"
+              for:
+                hours: 0
+                minutes: 0
+                seconds: 1
+            - condition: state
+              entity_id: light.openhasp_touch_backlight
+              state: unavailable
+              for:
+                hours: 0
+                minutes: 0
+                seconds: 1
+mode: single
