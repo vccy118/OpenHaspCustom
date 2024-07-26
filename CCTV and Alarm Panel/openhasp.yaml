@@ -1,4 +1,5 @@
-  kitchen_touch:
+# openHasp Home Assistant integration yaml file
+  openHasp_touch:
     objects:
       - obj: "p0b4"
         properties:
