@@ -1,5 +1,6 @@
 # automation to get cctv image from go2rtc latest.jpg
 # openhasp.push_image only supports "jpg" and "png" extension images, alternatives like "jpeg" doesn't work
+# this only works if Home Assistant is served over http, for https please add "hasp publish cctv" automation as well
 alias: hasp get cctv
 description: >-
   openHasp push image to mqtt, but doesn't support https for now, use another
