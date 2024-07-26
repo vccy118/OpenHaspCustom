@@ -1,0 +1,15 @@
+# this automation is only needed if Home Assistant is served over https
+alias: hasp publish cctv
+description: Temporary work around to convert mqtt payload from https to http
+trigger:
+  - platform: mqtt
+    topic: hasp/kitchen_touch/command/p1b2.src
+condition: []
+action:
+  - service: mqtt.publish
+    metadata: {}
+    data:
+      qos: "1"
+      topic: hasp/kitchen_touch/command/p1b2.src
+      payload_template: http://homeassistant.local:8123/{{ trigger.payload[35:] }}
+mode: single
