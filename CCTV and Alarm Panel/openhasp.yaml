@@ -1,0 +1,77 @@
+  kitchen_touch:
+    objects:
+      - obj: "p0b4"
+        properties:
+          "text": "{{ states('sensor.alarm_temp_humidity_temperature') }}"
+
+      - obj: "p1b2"
+      - obj: "p1b3"
+        properties:
+          "val": '{{ 1 if is_state("switch.sonoff_100121f2fe_2", "on") else 0 }}'
+        event:
+          "release":
+            - service: homeassistant.toggle
+              entity_id: "switch.sonoff_100121f2fe_2"
+      - obj: "p1b4"
+        properties:
+          "val": '{{ 1 if is_state("switch.sonoff_100121f2fe_1", "on") else 0 }}'
+        event:
+          "release":
+            - service: homeassistant.toggle
+              entity_id: "switch.sonoff_100121f2fe_1"
+      - obj: "p1b5"
+        properties:
+          "val": '{{ 1 if is_state("switch.sonoff_100121f2fe_3", "on") else 0 }}'
+        event:
+          "release":
+            - service: homeassistant.toggle
+              entity_id: "switch.sonoff_100121f2fe_3"
+
+
+      - obj: "p2b2"
+        properties:
+          "val": '{{ 1 if is_state("switch.pillar_lights", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "switch.pillar_lights"
+      - obj: "p2b3"
+        properties:
+          "val": '{{ 1 if is_state("switch.lantern", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "switch.lantern"
+      - obj: "p2b4"
+        properties:
+          "val": '{{ 1 if is_state("switch.garage_lights", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "switch.garage_lights"
+      - obj: "p2b5"
+        properties:
+          "val": '{{ 1 if is_state("switch.front_porch_lights", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "switch.front_porch_lights"
+      - obj: "p2b6"
+        properties:
+          "val": '{{ 1 if is_state("switch.backyard_lights", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "switch.backyard_lights"
+      - obj: "p2b7"
+        properties:
+          "val": '{{ 1 if is_state("switch.dry_kitchen_plug", "on") else 0 }}'
+        event:
+          "down":
+            - service: homeassistant.toggle
+              entity_id: "switch.dry_kitchen_plug"
+
+
+      - obj: "p3b2"
+        properties:
+          "bg_color40": '{% if is_state("alarm_control_panel.home_alarm", "armed_away")%}#FF0000{% else %}#00FF00{% endif %}'
