@@ -1,0 +1,12 @@
+# add in Home Assistant configuration.yaml
+# template sensor to accept and concat (this.state + trigger.payload_json['text']) numbers in sequence for use in alarm panel code
+template:
+  - trigger:
+      - platform: mqtt
+        topic: hasp/kitchen_touch/state/p3b2
+        payload: up
+        value_template: "{{ value_json.event }}"
+    
+    sensor:
+      - name: number
+        state: "{% if '12' in trigger.payload_json['val']|string %} {% elif '11' not in trigger.payload_json['val']|string %} {{ this.state + trigger.payload_json['text'] }} {% else %} {{ this.state }} {% endif %}"
