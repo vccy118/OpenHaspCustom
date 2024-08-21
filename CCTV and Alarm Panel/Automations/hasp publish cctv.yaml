@@ -11,5 +11,5 @@ action:
     data:
       qos: "1"
       topic: hasp/kitchen_touch/command/p1b2.src
-      payload_template: http://homeassistant.local:8123/{{ trigger.payload[35:] }}
+      payload: http://homeassistant.local:8123/{{ trigger.payload[35:] }}
 mode: single
