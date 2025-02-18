@@ -3,14 +3,14 @@ Custom openHasp with cctv and alarm panel solutions for HomeAssistant integratio
 
 ESP Boards:  
 ESP32-S3 N16R8 Black Board variant pinout (Chip:ESP32-S3-Wroom-1; Board:YD-ESP32-23 2022-V1.3)  
-1. TFT_MISO=17       ;(T_DO on LCD)
-2. TFT_MOSI=8
-3. TFT_SCLK=18
-4. TFT_DC=5
-5. TFT_CS=16 
-6. TFT_RST=-1        ; Connect to RST pin on ESP32s3
-7. TFT_BCKL=13       ; None, configurable via web UI (e.g. 21)
-8. TOUCH_CS=3        ; (can also be 14 or )
+1. TFT_MISO=17       ; (T_DO on LCD)
+2. TFT_MOSI=8        ; (SDI(MOSI) and T_DIN on LCD)
+3. TFT_SCLK=18       ; (SCK and T_CLK on LCD)
+4. TFT_DC=5          ; (DC on LCD)
+5. TFT_CS=16         ; (CS on LCD)
+6. TFT_RST=-1        ; Connect to RST pin on ESP32s3 (RESET on LCD)
+7. TFT_BCKL=13       ; None, configurable via web UI (e.g. 21) (LED on LCD)
+8. TOUCH_CS=3        ; (T_CS on LCD)
 
 ESP-Wroom-32 38 Pin (cctv images doesn't work due to lack of PSRAM)  
 1. TFT_MISO=19
