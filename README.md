@@ -3,7 +3,7 @@ Custom openHasp with cctv and alarm panel solutions for HomeAssistant integratio
 
 ESP Boards:  
 ESP32-S3 N16R8 Black Board variant pinout (Chip:ESP32-S3-Wroom-1; Board:YD-ESP32-23 2022-V1.3)  
-1. TFT_MISO=17
+1. TFT_MISO=17       ;(T_DO on LCD)
 2. TFT_MOSI=8
 3. TFT_SCLK=18
 4. TFT_DC=5
