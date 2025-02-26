@@ -1,7 +1,8 @@
 # OpenHaspCustom
 Custom openHasp with cctv and alarm panel solutions for HomeAssistant integration
 
-ESP Boards:  
+<h1>ESP Boards:</h1>  
+  
 ESP32-S3 N16R8 Black Board variant pinout (Chip:ESP32-S3-Wroom-1; Board:YD-ESP32-23 2022-V1.3)  
 1. TFT_MISO=17       ; (T_DO on LCD)
 2. TFT_MOSI=8        ; (SDI(MOSI) and T_DIN on LCD)
@@ -12,7 +13,8 @@ ESP32-S3 N16R8 Black Board variant pinout (Chip:ESP32-S3-Wroom-1; Board:YD-ESP32
 7. TFT_BCKL=13       ; None, configurable via web UI (e.g. 21) (LED on LCD)
 8. TOUCH_CS=3        ; (T_CS on LCD)
 
-ESP-Wroom-32 38 Pin (cctv images doesn't work due to lack of PSRAM)  
+<h1>ESP-Wroom-32 38 Pin (cctv images doesn't work due to lack of PSRAM):</h1>  
+
 1. TFT_MISO=19
 2. TFT_MOSI=23
 3. TFT_SCLK=18
@@ -22,7 +24,8 @@ ESP-Wroom-32 38 Pin (cctv images doesn't work due to lack of PSRAM)
 7. TFT_BCKL=21       ; None, configurable via web UI (e.g. 21)
 8. TOUCH_CS=5        ; (can also be 14 or )
 
-LCD touch panel:  
+<h1>LCD touch panel:</h1>  
+  
 2.8 Inch SPI TFT LCD Touch Panel ILI9341 (Touch Controller:XPT2046)  
 Special fix needed for this panel:  
 At the default SPI_TOUCH_FREQUENCY=2500000, the Y axis will be stuck at 4095 and the Z axis (touch pressure) will fluctuate around 1000, which will cause the touch to be unusable.  
