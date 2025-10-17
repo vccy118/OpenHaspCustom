@@ -11,5 +11,6 @@ action:
     data:
       qos: "1"
       topic: hasp/kitchen_touch/command/p1b2.src
-      payload: http://homeassistant.local:8123/{{ trigger.payload[35:] }}
+      payload: http://homeassistant.local:8123/{{ trigger.payload[29:] }}
+      #[29:] is used to grab the https link by 29 character position counting from the left and parse everything from character 30 onwards (api/openhasp...) onto http://homeassistant.local:8123/
 mode: single
